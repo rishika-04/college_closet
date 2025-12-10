@@ -1,0 +1,133 @@
+/* General Body and Font */
+.our_header {
+    background-color: #3B445B;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Modal Styles */
+.modal {
+   
+    z-index: 9999; /* Ensure it overlays other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.modal-header {
+    background-color: #3B445B;
+    color: white;
+    border-bottom: none; /* Removed the white line */
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+}
+
+.modal-dialog {
+    max-width: 600px;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Split the Tab Buttons in Two Halves */
+.nav-tabs {
+    display: flex;
+    justify-content: space-evenly; /* Spread tabs evenly across the modal */
+    padding: 0;
+    margin-bottom: 0; /* No extra space under the tabs */
+    border-bottom: none; /* Removed the thin line */
+}
+
+.nav-item {
+    text-align: center;
+    width: 50%;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white; /* Make tab text white */
+}
+
+/* Active Tab Styling */
+.nav-link.active {
+    background-color: #6C757D !important;
+    color: white!important; /* Active tab text color */
+}
+
+/* Button Styling for Login and Signup */
+.btn-primary final {
+    background-color: #212529; /* Set background color to #212529 */
+    color: white; /* Set text color to white */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #343a40; /* Darker color on hover */
+    color: white !important;
+
+}
+#login-tab:hover, #signup-tab:hover{
+    color: white!important;
+}
+/* Footer Styling */
+.our_footer {
+    margin-bottom: 0rem !important;
+    margin-top: 0rem;
+    background-color: #3B445B;
+    color: aliceblue !important;
+}
+
+.footer_icons {
+    color: aliceblue;
+}
+
+input.form-control {
+    background-color: white !important;
+}
+
+.final{
+    color:white !important;
+    background-color: #3B445B !important;
+    padding: 300px, 300px !important;
+    /* Highlight input box in red */
+
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+.error-message.active {
+    display: block;
+}

@@ -1,0 +1,161 @@
+.our_header{
+    background-color: #3B445B;
+} 
+.dropdown-menu {
+    background-color: #3B445B;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color:#f9f9f9;
+
+}
+.dropdown-toggle::after {
+    color: white; /* Changes the arrow color to white */
+}
+
+
+body {
+    background:#3B445B;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+/* Style for Account Details heading */
+.account-details-heading {
+    font-size: 20px;                 
+    font-family:'Montserrat', sans-serif !important;
+    font-weight: bold;
+    color:#3B445B;              
+}
+
+#unique{
+    background:white !important
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #3B445b
+}
+
+.profile-button {
+    background:#3B445b;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background:#3B445b
+}
+
+.profile-button:focus {
+    background: #3B445b;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #3B445b;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #3B445b;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #3B445b;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px#3B445b;
+}
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#unique {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.my_pfp {
+    width: 150px;        /* Set width */
+    height: 150px;       /* Set height equal to width */
+    object-fit: cover;   /* Ensure the image doesn't get stretched */
+    border-radius: 50%;  /* Make the image circular */
+}
+
+.invalid-feedback{
+    color:black;
+}
+
+
+.mb-3{
+    color:#fff;
+}
+
+.our_footer {
+    padding-right: 20px; /* Adjust the value as needed */
+}
+
+.footer_icons{
+    color:#fff;
+}
+
+/* Style for the placeholder option
+.form-select option.placeholder {
+    color: #6c757d; /* Gray color for the placeholder text */
+/* } */
+
+/* Ensure user-selected options have normal text color */
+/* .form-select:valid option {
+    color: black;
+} */ 
+
+
+/* General style for placeholder-like options */
+.form-select {
+    color: #6c757d; /* Default faded gray for placeholder */
+}
+
+/* Change text color when a valid option is selected */
+.form-select:not(:invalid) {
+    color: black;
+}
+
+/* styling the popup */
+#errorPopup {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#goToAccountBtn {
+    background-color: #3B445B;
+    border-color: #3B445B;
+}
+
+#goToAccountBtn:hover {
+    background-color: #2e354a; /* slightly darker */
+    border-color: #2e354a;
+}

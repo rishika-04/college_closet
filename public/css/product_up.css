@@ -1,0 +1,243 @@
+/* General Page and Header Styling */
+body {
+    background: #3B445B;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    
+}
+#unique {
+    max-width: 1100px;
+    width: calc(100% - 20px); /* keeps small left-right margin */
+    margin: 0 auto;           /* centers perfectly */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    margin-top: 1rem;         /* space from top border */
+}
+
+
+
+
+.our_header {
+    background-color: #3B445B;
+}
+
+/* Profile Picture Styling */ 
+.my_pfp {
+    width: 150px;        
+    height: 150px;       
+    object-fit: cover;   
+    border-radius: 50%;  
+}
+.dropdown-menu {
+    background-color: #3B445B;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color:#f9f9f9;
+
+}
+.dropdown-toggle::after {
+    color: white; /* Changes the arrow color to white */
+}
+
+h3{
+    font-family:'Montserrat', sans-serif !important;
+    font-size: 20px;
+    font-weight: bold;
+    color:#3B445B;
+}
+
+/* Form Control Styling */
+.form-control:focus {
+    box-shadow: none;
+    border-color: #3B445B;
+}
+
+.profile-button {
+    background:#3B445b;
+    box-shadow: none;
+    border: none;
+}
+.profile-button:focus {
+    background: #3B445B;
+    box-shadow: none;
+} 
+.profile-button:hover {
+    background: #6c757d !important;
+    border: #6c757d !important;
+}
+
+.profile-button:active {
+    background: #3B445B;
+    box-shadow: none;
+}  
+
+/* Hover Effects for Back Link */
+.back:hover {
+    color: #3B445B;
+    cursor: pointer;
+}
+
+/* Font and Label Styling */
+.labels {
+    font-size: 11px;
+}
+
+/* Add Experience Button Styling */
+.add-experience:hover {
+    background: #3B445B;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #3B445B;
+}
+
+/* Modal Specific Styling */
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Blue Header for Modal */
+.modal-header-blue {
+    background-color: #3B445B;
+    color: white;
+    border-bottom: none;
+}
+
+/* Modal Body Styling */
+#productUploadModal .modal-body {
+    background-color: #ffffff;
+    color: #3B445B;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Modal Footer Button Styling */
+#productUploadModal .login-button {
+    background-color: #3B445B;  /* Change to match your header background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#productUploadModal .login-button:hover {
+    background-color: #2C3745;  /* Slightly darker shade on hover */
+    color: white;
+}
+
+#productUploadModal .login-button:focus {
+    background-color: #2C3745;  /* Keep the darker background on focus */
+    color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+/* Placeholder Text and Form Select Styling */
+.form-select {
+    color: #6c757d;  /* Default faded gray for placeholder */
+}
+
+.form-select:not(:invalid) {
+    color: black;
+}
+
+/* Invalid Feedback Text */
+.invalid-feedback {
+    color: black;
+}
+
+/* /* Footer and Icons Styling */
+.our_footer {
+    padding-right: 20px;
+    width:100%; 
+} 
+
+.footer_icons {
+    color: #fff;
+}
+
+/* Margin and Padding Adjustments */
+.mb-3 {
+    color: #fff;
+}
+
+
+
+/* Default button styles */
+#uploadButton {
+    background-color:#3B445B ; 
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#uploadButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem #3B445B;
+}
+.btn-close {
+    filter: invert(1) brightness(2); /* Makes the close icon white */
+}
+
+#goToAccountBtn {
+    background-color: #3B445B;
+    border-color: #3B445B;
+}
+
+#goToAccountBtn:hover {
+    background-color: #2e354a; /* slightly darker */
+    border-color: #2e354a;
+}
+
+
+
+
+@media (max-width: 400px) {
+    #unique {
+        margin-left: 8px; 
+        margin-right: 8px;
+    }
+
+    footer {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden !important;
+}

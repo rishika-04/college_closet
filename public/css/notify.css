@@ -1,0 +1,277 @@
+
+#viewDetails{
+
+    background-color: #3B445B;
+    border: none;
+    color: white;
+
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+#viewDetails :hover {
+    background-color: #4C556A;  
+}
+.custom-price{
+    color:black;
+}
+
+
+
+/* Style for the product container */
+/* FIX PRODUCT CONTAINER */
+.product-container {
+    height: auto !important;   /* REMOVE FIXED HEIGHT */
+    overflow: visible !important; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
+.text-primary{
+    color:black !important;
+}
+
+.no-requests {
+    text-align: center;  /* Center the text horizontally */
+    /* display: flex;
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0; */
+ }
+
+ footer {
+    width: 100% !important;  
+    background-color: #f8f9fa; 
+    padding: 20px 0; 
+}
+
+footer .container-fluid {
+    width: 100%;  /* Ensures the inner container is also full width */
+}
+
+.viewDetailsButton {
+    font-size: 0.9rem !important;
+    background-color: #3B445B !important;
+    border: none !important;
+    color: #fff !important;
+    width: 75% !important;
+    transition: background-color 0.3s ease !important; /* Smooth transition */
+}
+
+.viewDetailsButton:hover {
+    background-color: #3B445B !important; /* Keep the color same on hover */
+    color: #fff !important;
+}
+
+/* Override default button behavior on click */
+.viewDetailsButton:active {
+    background-color: #d3d3d3 !important; /* Light grey background on click */
+    color: #000 !important; /* Optional: Change text color to dark on click */
+    outline: none !important; /* Remove the blue outline */
+}
+
+/* Remove any default focus or active state */
+.viewDetailsButton:focus {
+    outline: none !important; /* Remove the default outline */
+}
+
+
+
+.cancelButton, .confirmButton{
+     width: 48%; /* Adjust button width to leave some space */
+    /* border-radius: 50px; Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    border: none; /* Remove default border */
+    padding: 10px 0; /* Vertical padding */
+    color: #fff; /* White text */
+}
+.confirmButton {
+    background-color: #3B445B; /* Dark blue-gray */
+}
+
+.cancelButton {
+    background-color: #6c757d; /* Gray */
+}
+
+.confirmButton:hover {
+    background-color: #2a3244; /* Darker blue-gray on hover */
+}
+
+.cancelButton:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+
+
+
+
+/* Style for the Decline Button with specific ID */
+.declineSureButton {
+    background-color: #6c757d; /* Set background color to #6c757d */
+    font-size: 0.9rem;          /* Adjust font size */
+    border: none;               /* Remove the border */
+    color: white;               /* Set text color to white */
+    padding: 0.5rem;            /* Add padding for better appearance */
+    text-align: center;         /* Ensure the text is centered */
+    display: block;             /* Make the button block-level */
+}
+
+.declineSureButton:hover {
+    background-color: #5a6268; /* Darken background color on hover */
+    cursor: pointer;           /* Change cursor to pointer on hover */
+}
+
+.declineSureButton:focus {
+    box-shadow: none;           /* Remove focus box-shadow */
+}
+
+
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column !important;   /* stack image, text, buttons */
+        text-align: center;
+    }
+
+    .product-container .col-md-3,
+    .product-container .col-md-6 {
+        width: 100% !important;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .product-image {
+        max-width: 80% !important;
+        margin: 0 auto;
+    }
+
+    .buttonSection {
+        width: 100% !important;
+    }
+
+    .buttonSection button {
+        width: 100% !important;
+    }
+}
+
+/* FIX LEFT SHIFT for 576px–800px screens */
+@media (max-width: 800px) and (min-width: 576px) {
+
+    .notifications-container,
+    .product-container,
+    .container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+    }
+
+    .product-container {
+        display: flex;
+        flex-direction: column !important; 
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .product-container .col-md-3,
+    .product-container .col-md-6 {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+}
+
+/* ULTRA SMALL SCREEN FIX (Below 370px) */
+@media (max-width: 370px) {
+
+    /* Center the whole notification card */
+    .notifications-container,
+    .product-container,
+    .container {
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 6px !important; /* reduce side padding */
+    }
+
+    .product-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Make sure every section becomes full width */
+    .product-container .col-md-3,
+    .product-container .col-md-6 {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 12px;
+    }
+
+    /* Image resizing */
+    .product-image {
+        width: 75% !important;
+        max-height: 140px !important;
+        object-fit: contain;
+    }
+
+    /* Buttons must stay stacked + not overflow */
+    .buttonSection {
+        width: 100% !important;
+    }
+
+    .buttonSection button,
+    .viewDetailsButton {
+        width: 100% !important;
+        font-size: 0.8rem !important;
+        padding: 10px !important;
+    }
+
+    /* Reduce font size for ultra-small screens */
+    .product-details {
+        font-size: 0.85rem !important;
+        line-height: 1.2rem !important;
+    }
+}
+
+
+/* Keep logo + dropdown in one line and prevent layout shift */
+
+/* Between 370px and 850px */
+@media (max-width: 850px) {
+    .our_header .container-fluid {
+        padding: 0 10px;  /* prevents overflow */
+    }
+
+    /* shrink logo smoothly */
+    .our_header img[alt="mdo"][width="300"] {
+        width: 180px !important;
+        height: auto !important;
+    }
+}
+
+/* Below 370px */
+@media (max-width: 370px) {
+    .our_header img[alt="mdo"][width="300"] {
+        width: 150px !important;
+    }
+}
+.dropdown-menu {
+    background-color: #3B445B;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color:#f9f9f9;
+
+}
+.dropdown-toggle::after {
+    color: white; /* Changes the arrow color to white */
+}

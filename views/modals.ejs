@@ -1,0 +1,249 @@
+<!-- Account Modal -->
+<div class="modal fade" id="AccountModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Add modal-dialog-centered -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Log in or sign up to access your account.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn login-button open-auth-btn" >Login / Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal for User to Log in/Sign Up before Uploading a Product -->
+<div class="modal fade" id="productUploadModal" tabindex="-1" aria-labelledby="productUploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Center the modal -->
+        <div class="modal-content">
+            <div class="modal-header modal-header-blue"> <!-- Add a blue header -->
+                <h5 class="modal-title" id="productUploadModalLabel">Login Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                Log in or sign up to upload a product.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn login-button open-auth-btn" >Login / Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal for User to Log in/Sign Up before viewing his products-->
+<div class="modal fade" id="myProductsModal" tabindex="-1" aria-labelledby="myProductsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Center the modal -->
+        <div class="modal-content">
+            <div class="modal-header modal-header-blue"> <!-- Add a blue header -->
+                <h5 class="modal-title" id="myProductsModalLabel">Login Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+
+            </div>
+            <div class="modal-body">
+                Log in or sign up to to view your uploaded products.
+            </div>
+            <div class="modal-footer">
+                
+
+                <button type="button" class="btn login-button open-auth-btn" >Login / Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal for User to Log in/Sign Up before viewing his notifications-->
+<div class="modal fade" id="notificationsModal" tabindex="-1" aria-labelledby="notificationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Center the modal -->
+        <div class="modal-content">
+            <div class="modal-header modal-header-blue"> <!-- Add a blue header -->
+                <h5 class="modal-title" id="notificationsModalLabel">Login Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                Log in or sign up to access your notifications.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn login-button open-auth-btn" >Login / Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal for User to Log in/Sign Up before sending a request-->
+<div class="modal fade" id="sendRequestModal" tabindex="-1" aria-labelledby="sendRequestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"> <!-- Center the modal -->
+      <div class="modal-content">
+          <div class="modal-header modal-header-blue"> <!-- Add a blue header -->
+              <h5 class="modal-title" id="sendRequestModalLabel">Login/ Sign Up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+          </div>
+          <div class="modal-body">
+              You must login or sign up to send a request.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn login-button open-auth-btn" >Login / Sign up</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal HTML Structure -->
+<div id="auth-modal" class="modal fade" tabindex="-1" aria-labelledby="auth-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- Equidistant Tab Buttons, Split in Two Halves -->
+        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+          <div style="flex: 1; text-align: center;">
+            <ul class="nav nav-tabs" id="auth-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true" style="font-weight: 500; font-size: 19px;">Login</a>
+              </li>
+            </ul>
+          </div>
+          <div style="flex: 1; text-align: center;">
+            <ul class="nav nav-tabs" id="auth-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false" style="font-weight: 500; font-size: 19px;">Sign Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="tab-content" id="auth-tabContent">
+          <!-- Login Form -->
+          <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+            <form id="login-form"  method="POST">
+              <div class="mb-3">
+                <input type="email" class="form-control" id="login-email" name="name_login-email" placeholder="Enter email"  required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                <div id="emailError" class="error-message">Email must end with @vitbhopal.ac.in</div>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="login-password" name="name_login-password" placeholder="Password" required minlength="8" maxlength="20" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&#]{8,20}$" required>
+                <div id="passwordError" class="error-message">Password must be 8-20 characters long, include at least one letter, one number, and one special character.</div>  
+            </div>
+              <button type="submit" class="btn  final " id="login-btn" style="font-weight: 500; font-size: 19px; background-color: #3B445B !important;padding-left: 100px!important; padding-right: 100px!important; ">Login</button>
+            </form>
+          </div>
+
+          <!-- Signup Form -->
+          <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab"  method="POST">
+            <form id="signup-form" method="POST">
+              <div class="mb-3" id="details">
+                <input type="email" class="form-control" id="signup-email" placeholder="Enter email" name="name_signup_email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                <div id="emailErrorSignup" class="error-message">Email must end with @vitbhopal.ac.in</div>
+              </div>
+              <div class="mb-3" id="details" >
+                <input type="password" class="form-control" id="signup-password" placeholder="Password" name="name_signup_password" required required minlength="8" maxlength="20" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&#]{8,20}$">
+                <div id="passwordErrorSignup" class="error-message">Password must be 8-20 characters long, include at least one letter, one number, and one special character.</div>
+              </div>
+              <div class="mb-3" id="details">
+                <input type="password" class="form-control" id="confirm-password" name="name_confirm_password" placeholder="Confirm Password" required>
+                <div id="passwordErrorMatch" class="error-message">Passwords don't match.</div>
+              </div>
+              <button type="submit" class="btn final" id="signup-btn" style="font-weight: 500; font-size: 19px; padding-left: 100px!important; padding-right: 100px!important;" >Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal for successfully logging out-->
+<div class="modal fade" id="successLogoutModal" tabindex="-1" aria-labelledby="successLogoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Center the modal -->
+        <div class="modal-content">
+            <div class="modal-header modal-header-blue"> <!-- Add a blue header -->
+                <h5 class="modal-title" id="successLogoutModalLabel">Logged Out </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                You have successfully logged out.
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn btn-primary" id = "successLogout">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Profile Incomplete Modal -->
+<div class="modal fade" id="profileIncompleteModal" tabindex="-1" aria-labelledby="profileIncompleteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="profileIncompleteLabel">Complete Your Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                To upload products or send requests, please complete your profile first.
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" id = "goToAccountBtn" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+  
+
+<!-- Combined Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="btn-close custom-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Login Error Message -->
+                <div id="loginErrorMessage" class="error-message login-error-message">
+                    <!-- Message will be inserted here for login errors -->
+                </div>
+
+                <!-- Signup Error Message -->
+                <div id="signupErrorMessage" class="error-message signup-error-message">
+                    <!-- Message will be inserted here for signup errors -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="effectsError">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Global Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Request Sent</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your rental request has been successfully sent.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary request-sent-close-button" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

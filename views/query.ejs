@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/item_page.css">
+    <link href="/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modals.css">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+
+    
+</head>
+<body>
+<div class="our_header">
+  <header class="site-header py-3 mb-3 border-bottom">
+    <div class="container-fluid header-container d-flex align-items-center justify-content-between">
+
+      <!-- LOGO -->
+      <div class="header-logo">
+        <!-- removed hard width/height attrs so CSS controls size -->
+        <img src="/images/official__logo.png" alt="College Closet logo" class="logo-img">
+      </div>
+
+      <!-- SEARCH BAR -->
+      <form class="search-form" role="search" method="GET" action="/search" novalidate>
+        <input
+          type="text"
+          class="search-input"
+          name="query"
+          placeholder="Search By Product"
+          aria-label="Search"
+          required
+          oninput="this.setCustomValidity('')"
+          oninvalid="this.setCustomValidity('')"
+        />
+        <button class="search-btn" type="submit">Search</button>
+        <small class="error-message" aria-live="polite"></small>
+      </form>
+
+      <!-- Invisible spacer to balance -->
+    <div class="header-spacer"></div>
+
+
+      <!-- PROFILE DROPDOWN -->
+      <div class="dropdown profile-section flex-shrink-0">
+        <a href="#" class="d-block text-decoration-none dropdown-toggle profile-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/images/default__pff.jpg" alt="Profile" class="rounded-circle profile-img">
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end text-small shadow">
+          <% if (!user) { %>
+            <li>
+              <a class="dropdown-item" href="#" id="login-signup-btn" data-bs-toggle="modal" data-bs-target="#auth-modal">Login / Sign Up</a>
+            </li>
+          <% } else { %>
+            <li>
+              <a class="dropdown-item" id="logoutButton" href="/logout">Sign out</a>
+            </li>
+          <% } %>
+
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="/" id="home-btn" >Home</a></li>
+          <li><a class="dropdown-item" href="/account" id="accountDropDown">Account</a></li>
+          <li><a class="dropdown-item" href="/product_up" id="uploadProductDropdown">Upload Product</a></li>
+          <li><a class="dropdown-item" href="/myProducts" id="myProductsDropdown">My Products</a></li>
+          <li><a class="dropdown-item" href="/notifications" id="notificationsDropdown">Notifications</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+</div>
+
+    <div class="container mt-5 mb-5">
+        
+        <div class=" d-flex justify-content-center row">
+            <div class="col-md-10">
+                <% if (products.length > 0) { %>
+                    <% products.forEach((product, index) => { %>
+                        <div class="row p-2 bg-white border rounded mt-2 eachProduct">
+                            <div class="col-md-3 mt-1">
+                                <img class="img-fluid img-responsive rounded product-image" 
+                                     src="<%= product.image_url || '/images/default__pff' %>" 
+                                     alt="<%= product.product_name %>">
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <h5><%= product.model_name %></h5>
+                               
+                                <div class="mt-1 mb-1 spec-1">
+                                    <span><%= product.age_in_years %> years old</span><br>
+                                </div>
+                                <p class="text-justify text-truncate para mb-0 product-description">
+                                    <%= product.description || 'No description available.' %>
+                                </p>
+                            </div>
+                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                <div class="d-flex flex-row align-items-center">
+                                    <h4 class="mr-1">₹<%= product.price %>/day</h4> <!-- Display price -->
+                                </div>
+                                <div class="d-flex flex-column mt-4">
+                                    <button 
+                                        class="btn btn-primary btn-sm" 
+                                        id="proceed"
+                                        type="button" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#confirmModal<%= index %>"
+                                        >
+                                    
+                                        Proceed
+                                    </button>
+                            
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal for each product -->
+                        <div class="modal fade" id="confirmModal<%= index %>" tabindex="-1" aria-labelledby="modalLabel<%= index %>" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered"">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel<%= index %>">Confirm Rental</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h6>You have chosen to rent <%= product.model_name %>.</h6>
+                                        <form id="form<%= index %>">
+                                            <div class="mb-3">
+                                                <label for="startDate<%= index %>" class="form-label">Rent From:</label>
+                                                <input type="date" id="startDate<%= index %>" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="endDate<%= index %>" class="form-label">Rent Until:</label>
+                                                <input type="date" id="endDate<%= index %>" class="form-control">
+                                            </div>
+                                        </form>
+                                        <div id="result<%= index %>"></div>
+                                        <h6 id="rented_from_heading">Rented From:</h6>
+                                        <% if (product.uploader_id) { %>
+                                            <p> <%= product.uploader_id.first_name %> <%= product.uploader_id.last_name %> | 
+                                            <%= product.uploader_id.mobile %></p>
+                                        <% } else { %>
+                                            <p>No renter information available.</p>
+                                        <% } %>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button 
+                                        class="btn btn-primary confirm-btn" 
+                                        type="button" 
+                                        
+                                        
+                                        id="confirmButton<%= index %>" 
+                                        data-price="<%= product.price %>"  
+                                        data-product-id="<%= product._id %>"
+                                        disabled>
+                                        Send Request
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No products found.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<%- include("footer") %>
+    <%- include("modals") %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src ="/js/query.js" ></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/index.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/modals.js"></script>
+
+</body>
+</html>

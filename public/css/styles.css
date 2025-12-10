@@ -1,0 +1,454 @@
+/* ============================
+   BASE COLORS & RESET
+============================ */
+:root{
+  --header-bg: #3B445B;
+  --accent: #3B445B;
+  --muted-bg: #f9f9f9;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ============================
+   HEADER BASE & LAYOUT
+============================ */
+.our_header { background-color: var(--header-bg); }
+.site-header { background-color: var(--header-bg); }
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 6px 8px;              /* reduced side spacing */
+  flex-wrap: nowrap;
+}
+
+/* Logo (230px on laptop as requested) */
+.logo-img {
+  width: 230px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* SEARCH FORM (perfect center) */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--muted-bg);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  flex: 1 1 auto;
+  min-width: 200px;
+  max-width: 600px;
+  justify-content: center;
+  margin-left: auto;             /* center hack */
+  margin-right: auto;            /* center hack */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+/* inner input */
+.search-input {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  border: none !important;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+}
+
+/* search button */
+.search-btn {
+  padding: 8px 14px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Profile image — UPDATED: 75px large screen */
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #fff6;
+}
+
+/* dropdown menu */
+.dropdown-menu {
+  background-color: var(--header-bg);
+  min-width: 180px;
+  max-width: 260px;
+}
+
+.dropdown-item { color: #fff; }
+.dropdown-item:hover { background-color: #f9f9f9; color: #000; }
+
+/* ========== CATEGORIES HEADING ========== */
+.categories h1,
+h1.text-center {
+  font-size: 2.6rem;
+  color: var(--header-bg);
+  margin: 0;
+  font-weight: 700;
+}
+
+/* album container */
+.album.album_categories {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+
+.album .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.card-img-top { width: 100%; height: 225px; object-fit: cover; }
+
+
+
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+============================ */
+
+/* Medium screens (<= 992px) */
+@media (max-width: 992px) {
+  .logo-img { width: 180px; }
+  .profile-img { width: 50px; height: 50px; }
+  .search-form { max-width: 520px; }
+  .categories h1 { font-size: 2.1rem; }
+}
+
+/* Small tablets (<= 768px) */
+@media (max-width: 768px) {
+  .logo-img { width: 150px; }
+  .profile-img { width: 40px; height: 40px; }
+  .search-form { max-width: 440px; padding: 6px 10px; }
+  .categories h1 { font-size: 1.6rem; }
+  .dropdown-menu { max-width: 220px; }
+}
+
+/* Mid small (<= 650px) */
+@media (max-width: 650px) {
+  .header-container { gap: 8px; padding-left: 6px; padding-right: 6px; }
+  .logo-img { width: 120px; }
+  .profile-img { width: 35px; height: 35px; }
+  .search-form { max-width: 320px; padding: 4px 8px; }
+  .search-input { font-size: 0.82rem; }
+  .search-btn { font-size: 0.78rem; padding: 6px 8px; }
+}
+
+/* phones (<= 500px) */
+@media (max-width: 500px) {
+  .logo-img { width: 95px; }
+  .profile-img { width: 25px; height: 25px; }
+  .search-form { max-width: 260px; }
+  .search-input { font-size: 0.75rem; }
+  .search-btn { font-size: 0.72rem; }
+}
+
+/* tiny screens (<= 380px) */
+@media (max-width: 380px) {
+  .logo-img { width: 80px; }
+  .search-form { max-width: 220px; }
+  .profile-img { width: 18px; height: 18px; }
+}
+
+/* prevent horizontal overflow */
+* { box-sizing: border-box; }
+
+.dropdown-toggle { color: #f8f9fa; }
+
+/* ============================================
+   CENTER FIX – SEARCH BAR PERFECTLY CENTERED
+============================================ */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center everything by default */
+    position: relative;
+}
+
+/* Real logo on left */
+.header-logo {
+    flex: 0 0 auto;
+}
+
+/* Ghost block on RIGHT – balances logo width */
+.header-spacer {
+    width: 60px;       /* same as large profile image */
+    height: 1px;       /* invisible */
+    flex-shrink: 0;
+}
+
+/* Profile block */
+.profile-section {
+    flex: 0 0 auto;
+}
+
+/* Search bar centered */
+.search-form {
+    flex: 1 1 auto;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+
+/* ============================================
+   CLEANED SMALL SCREEN RULES (NO OVERFLOW)
+============================================ */
+
+/* 500px */
+@media (max-width: 525px) {
+    .logo-img { width: 110px; }
+    .profile-img { width: 48px; height: 48px; }
+    .header-spacer { width: 48px; }
+
+    .search-form {
+        min-width: 140px;
+        max-width: 220px;
+        padding: 5px 8px;
+        gap: 6px;
+    }
+
+    .search-input {
+        font-size: 0.8rem;
+        min-width: 0;
+    }
+
+    .search-btn {
+        padding: 5px 7px;
+        font-size: 0.78rem;
+    }
+}
+
+/* 420px */
+@media (max-width: 420px) {
+    .logo-img { width: 90px; }
+    .profile-img { width: 40px; height: 40px; }
+    .header-spacer { width: 40px; }
+
+    .search-form {
+        min-width: 120px;
+        max-width: 180px;
+        padding: 4px 6px;
+        gap: 5px;
+        overflow: hidden;
+    }
+
+    .search-input {
+        font-size: 0.75rem;
+        min-width: 0;
+        padding: 4px;
+    }
+
+    .search-btn {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+    }
+}
+
+/* 350px */
+@media (max-width: 350px) {
+    .logo-img { width: 70px; }
+    .profile-img { width: 32px; height: 32px; }
+    .header-spacer { width: 32px; }
+
+    .search-form {
+        min-width: 105px;
+        max-width: 150px;
+        padding: 3px 5px;
+        gap: 4px;
+    }
+
+    .search-btn {
+        padding: 3px 5px;
+        font-size: 0.65rem;
+    }
+}
+
+/* 270px (ultra tiny) */
+@media (max-width: 270px) {
+    .logo-img { width: 55px; }
+    .profile-img { width: 25px; height: 25px; }
+    .header-spacer { width: 25px; }
+
+    .search-form {
+        min-width: 85px;
+        max-width: 110px;
+        padding: 2px 3px;
+        gap: 3px;
+        overflow: hidden;
+    }
+
+    .search-input {
+        font-size: 0.6rem;
+        padding: 2px 2px;
+        min-width: 0;
+    }
+
+    .search-btn {
+        padding: 2px 3px;
+        font-size: 0.6rem;
+    }
+}
+/* FIX: Search bar spilling between 530px – 510px */
+@media (max-width: 540px) and (min-width: 510px) {
+
+    .search-form {
+        max-width: 240px !important;
+        min-width: 140px !important;
+        padding: 5px 8px !important;
+        gap: 6px !important;
+    }
+
+    .search-input {
+        font-size: 0.78rem !important;
+        min-width: 0 !important;
+    }
+
+    .logo-img {
+        width: 105px !important;
+    }
+
+    .profile-img,
+    .header-spacer {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+
+
+
+/* Modal Styles */
+.modal-body {
+    padding: 2rem;
+    background-color: #f9f9f9; /* Light background for the modal body */
+}
+
+.modal-header {
+    background-color: #3B445B; /* Dark background for the modal header */
+    color: white;
+    border-bottom: 2px solid #ccc;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-content {
+    border-radius: 10px; /* Rounded corners for the modal */
+    overflow: hidden;
+}
+
+.modal-dialog {
+    max-width: 600px; /* Restrict max width for better look */
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Options */
+.modal-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Space between buttons */
+}
+
+.modal-option {
+    text-decoration:none;
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-option:hover {
+    background-color: #3B445B;
+    color: white;
+}
+.btn-close {
+    filter: invert(1); /* Inverts the color, turning black to white */
+}
+
+.btn-close:hover {
+    filter: invert(1) brightness(1.2); /* Slightly brighten the color on hover */
+}
+
+
+
+
+/* Override ALL Bootstrap primary button variables */
+.btn-primary {
+    /* Base grey */
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #6c757d;
+    --bs-btn-color: #fff;
+
+    /* Hover grey */
+    --bs-btn-hover-bg: #5c636a;
+    --bs-btn-hover-border-color: #5c636a;
+    --bs-btn-hover-color: #fff;
+
+    /* Active grey (pressed effect) */
+    --bs-btn-active-bg: #4f555b;
+    --bs-btn-active-border-color: #4f555b;
+    --bs-btn-active-color: #fff;
+
+    /* Remove Bootstrap shadows */
+    --bs-btn-focus-shadow-rgb: 0,0,0;
+    --bs-btn-active-shadow: none;
+
+    /* Disabled state */
+    --bs-btn-disabled-bg: #6c757d;
+    --bs-btn-disabled-border-color: #6c757d;
+    --bs-btn-disabled-color: #fff;
+
+    /* Smooth transition */
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+    box-shadow: none !important;
+}
+
+/* Optional: slight press effect */
+.btn-primary:active {
+    transform: translateY(1px);
+}

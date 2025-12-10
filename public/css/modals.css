@@ -1,0 +1,26 @@
+.open-auth-btn {
+    background-color: #3B445B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.request-sent-close-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+/* active click color */
+.request-sent-close-button:active {
+    background-color: #3B445B;
+}
+
+.modal-footer {
+    display: flex !important;
+    justify-content: flex-end !important; /* pushes all buttons to right */
+}

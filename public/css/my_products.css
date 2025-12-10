@@ -1,0 +1,399 @@
+/* Global Styles */
+body {
+    background-color: #3B445B;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+.our_header{
+    background-color: #3B445B;
+} 
+.dropdown-menu {
+    background-color: #3B445B;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color:white !important;
+
+}
+.dropdown-toggle::after {
+    color: white; /* Changes the arrow color to white */
+}
+
+
+header {
+    padding: 1rem 0;
+    border-bottom: 2px solid #ccc;
+}
+
+header .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Search Results */
+.container {
+    flex: 1; /* Allow the content to take available space */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Product Card Styles */
+.row {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.spec-1 {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+h5 {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.text-justify {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+button.btn-sm {
+    padding: 0.5rem 1.25rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #3B445B;
+    color: white;
+    padding: 1rem;
+    
+    text-align: center;
+    margin-top: auto;
+    margin-bottom:0; /* Pushes footer to the bottom */
+}
+.footer_changes{
+    margin-bottom: 0px !important;
+}
+
+footer .col-md-4 {
+    display: flex;
+    align-items: center;
+}
+
+footer .nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer .footer_icons {
+    color: white;
+}
+
+footer .footer_icons:hover {
+    color: #c1c3ce;
+}
+
+
+.our_footer {
+    padding-right: 20px; 
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .col-md-3, .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+/* Adjust product card container to remove extra space */
+.main_results .row {
+    padding: 0; /* Remove extra padding */
+}
+
+.main_results .col-md-10 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Ensure each product card container has no margin and padding */
+.main_results .row .col-md-3, .main_results .row .col-md-6, .main_results .row .col-md-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Remove any default padding or margin that might cause extra space around the card */
+.main_results .row .col-md-3, .main_results .row .col-md-6 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Optional: Adjust border to ensure clean edges */
+.row.p-2.bg-white.border.rounded.mt-2 {
+    border-left: none; /* Remove left border to avoid extra space */
+    border-right: none; /* Remove right border to avoid extra space */
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #3B445B;
+    color: white;
+    border-bottom: 1px solid #c1c3ce;
+    padding: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color:white;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #444;
+    background-color: #f9f9f9;
+    border-top: 1px solid #c1c3ce;
+}
+
+.modal-footer {
+    background-color: #f1f1f1;
+    border-top: 1px solid #c1c3ce;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+button.btn-primary {
+    background-color: #3B445B;
+    border: none;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+button.btn-primary:hover {
+    background-color: #c1c3ce;
+    color: #3B445B;
+}
+
+button.btn-secondary {
+    background-color: #c1c3ce;
+    border: none;
+    color: #3B445B;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+button.btn-secondary:hover {
+    background-color: #3B445B;
+    color: white;
+}
+
+.box-1 {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+
+
+/* Style for disabled buttons with color #6c757d */
+button:disabled {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #fff !important;
+    cursor: not-allowed;
+}
+
+#rented_from_heading{
+ font-size: larger;
+}
+
+
+
+
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Adds spacing between elements */
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #c1c3ce;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    width: 50%;
+    margin: 1rem auto; /* Center the form */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative;
+    left: -40px; /* Shift the form 20px to the left */
+}
+
+.search-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #3B445B; /* Change border color on focus */
+}
+
+.search-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B445B;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #2C3448;
+    transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .search-form {
+        width: 80%;
+    }
+}
+
+
+.btn-close {
+    filter: invert(100%); /* Makes the button white */
+  }
+
+  .btn-close:hover {
+    filter: invert(80%); /* Slight dim effect on hover for better visibility */
+  }
+
+  #myProductsNoAccount:hover {
+    color: white   !important;
+    border-color: #2a3244 !important;
+    background-color: #2a3244  !important ; /* Darker blue-gray on hover */
+}
+#myProductsNoAccount {
+    color: white !important;
+    background-color: #3B445B  !important; /* Dark blue-gray */
+}
+
+#loginSignupButton:hover {
+    color: white;
+    border-color: #2a3244 !important;
+    background-color: #2a3244 !important; /* Darker blue-gray on hover */
+}
+#loginSignupButton {
+    color: white !important;
+    background-color: #3B445B !important; /* Dark blue-gray */
+}
+#accountDoesntExist:hover {
+    color: white;
+    border-color: #2a3244 !important;
+    background-color: #2a3244 !important; /* Darker blue-gray on hover */
+}
+#accountDoesntExist {
+    color: white !important;
+    background-color: #3B445B !important; /* Dark blue-gray */
+}
+
+#myProductsNoAccount:hover {
+    color: white;
+    border-color: #2a3244 !important;
+    background-color: #2a3244 !important; /* Darker blue-gray on hover */
+}
+#myProductsNoAccount {
+    color: white !important;
+    background-color: #3B445B !important; /* Dark blue-gray */
+}
+#notificationsNoAccount:hover {
+    color: white;
+    border-color: #2a3244 !important;
+    background-color: #2a3244 !important; /* Darker blue-gray on hover */
+}
+#notificationsNoAccount {
+    color: white !important;
+    background-color: #3B445B !important; /* Dark blue-gray */
+}
+#successLogout {
+    color: white !important;
+    background-color: #3B445B !important; /* Dark blue-gray */
+}
+#successLogout:hover {
+    color: white;
+    border-color: #2a3244 !important;
+    background-color: #2a3244 !important; /* Darker blue-gray on hover */
+}
+.product-description {
+    overflow: visible; /* Let the text flow as needed */
+    white-space: normal; /* Allow wrapping */
+    word-break: break-word; /* Break words if necessary */
+    text-align: justify;
+    padding-right: 50px;
+    /* padding-left: 20px; */
+    padding-top: 50px;
+    
+}
+
+/* Fix container shifting on mid-sized screens */
+@media (max-width: 780px) {
+    .container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .col-md-10 {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
