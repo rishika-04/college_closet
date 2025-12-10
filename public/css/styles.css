@@ -165,12 +165,13 @@ h1.text-center {
 
 /* phones (<= 500px) */
 @media (max-width: 500px) {
-  .logo-img { width: 95px; }
+  .logo-img { width: 110px; }   /* INCREASED SIZE */
   .profile-img { width: 25px; height: 25px; }
   .search-form { max-width: 260px; }
   .search-input { font-size: 0.75rem; }
   .search-btn { font-size: 0.72rem; }
 }
+
 
 /* tiny screens (<= 380px) */
 @media (max-width: 380px) {
